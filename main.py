@@ -27,7 +27,7 @@ if __name__ == '__main__':
 			for line in csvFile:
 				cgList.append( float(line.split(',')[1]) )
 				cont = int(line.split(',')[0][-2:])
-				print( line.split(',')[0] + '...')
+			print( line.split(',')[0] + '...' )
 
 	for i in range(99):
 		roll = myroll[:-2] + format(i + 1, '02')
