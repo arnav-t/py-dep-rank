@@ -17,7 +17,7 @@ def checkExistence(roll):
 if __name__ == '__main__':
 	cfails = 0
 	cgList = []
-	myroll = input('Enter roll number: ')
+	myroll = input('Enter roll number: ').upper()
 	mycg = 0
 	cont = 0
 	fileName = myroll[:5].upper() + '.csv'
@@ -25,9 +25,13 @@ if __name__ == '__main__':
 		print('Found records. Continuing from ', end='')
 		with open(fileName, 'r') as csvFile:
 			for line in csvFile:
-				cgList.append( float(line.split(',')[1]) )
-				cont = int(line.split(',')[0][-2:])
-			print( line.split(',')[0] + '...' )
+				cg = float(line.split(',')[1])
+				roll = line.split(',')[0]
+				cgList.append(cg)
+				cont = int( roll[-2:] )
+				if myroll.upper() == roll:
+					mycg = cg
+			print(roll + '...')
 
 	for i in range(99):
 		roll = myroll[:-2] + format(i + 1, '02')
