@@ -4,7 +4,7 @@ import datetime
 import ctypes
 
 URL = 'https://erp.iitkgp.ac.in/StudentPerformanceV2/auth/authenticate.htm'
-PROCS = 256
+PROCS = 128
 
 def checkDate(params):
 	roll, date, ret = params[0], params[1], params[2]
