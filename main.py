@@ -19,10 +19,20 @@ if __name__ == '__main__':
 	cgList = []
 	myroll = input('Enter roll number: ')
 	mycg = 0
+	cont = 0
 	fileName = myroll[:5].upper() + '.csv'
+	if os.path.isfile(fileName):
+		print('Found records. Continuing from ', end='')
+		with open(fileName, 'r') as csvFile:
+			for line in csvFile:
+				cgList.append( float(line.split(',')[1]) )
+				cont = int(line.split(',')[0][-2:])
+				print( line.split(',')[0] + '...')
 
 	for i in range(99):
 		roll = myroll[:-2] + format(i + 1, '02')
+		if i <= cont:
+			continue
 		if not checkExistence(roll):
 			cfails += 1
 			if cfails >= 5:
