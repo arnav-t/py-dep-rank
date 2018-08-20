@@ -14,7 +14,7 @@ Now enter your roll number and wait for the results to load.
 The data will also be stored as a `.csv` file in the same directory.    
 For example, if your roll number is '12CS10001' then the results will also be stored in `12CS1.csv`
 ### Throttling
-The server will throttle your connection if you make a large number of requests within a short period of time. To overcome this, use WiFi instead of LAN. If the script seems to be going much slower than before, just type this in a different terminal window:
+The server will throttle your connection if you make a large number of requests within a short period of time. To overcome this, use WiFi instead of ethernet cable. If the script seems to be going much slower than before, just type this in a different terminal window:
 ```sh
 sudo dhclient -v -r [wireless interface]
 ```
